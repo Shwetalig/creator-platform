@@ -26,7 +26,7 @@ function AnalyticsDashboard() {
       .get(`${BASE}/api/analytics`)
       .then((res) => setData(res.data))
       .catch((err) => console.error("Error fetching analytics", err));
-  }, []);
+  }, [BASE]);
 
   if (!data) return <p>Loading...</p>;
 
