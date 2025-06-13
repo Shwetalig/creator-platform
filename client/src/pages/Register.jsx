@@ -7,13 +7,14 @@ function Register() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const BASE = process.env.REACT_APP_API_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post(`${BASE}/api/auth/register`, {
         email,
         password,
       });
