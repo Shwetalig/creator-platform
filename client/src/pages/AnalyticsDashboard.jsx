@@ -110,7 +110,9 @@ function AnalyticsDashboard() {
 
       <div ref={analyticsSectionRef}>
         <div className="bg-white p-4 rounded shadow">
-          <h3 className="font-semibold mb-2">📈 Follower Growth (Last 7 Days)</h3>
+          <h3 className="font-semibold mb-2">
+            📈 Follower Growth (Last 7 Days)
+          </h3>
           <ResponsiveContainer width="100%" height={300}>
             <LineChart data={followerData}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -141,6 +143,11 @@ function AnalyticsDashboard() {
               <Bar dataKey="comments" fill="#f43f5e" />
             </BarChart>
           </ResponsiveContainer>
+        </div>
+
+        <div className="bg-white p-4 rounded shadow">
+          <h3 className="font-semibold">⏰ Best Time to Post</h3>
+          <p className="text-lg">{data.bestPostTime || "N/A"}</p>
         </div>
       </div>
     </div>

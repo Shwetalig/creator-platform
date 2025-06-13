@@ -18,7 +18,7 @@ function Login() {
         password,
       });
       localStorage.setItem("token", res.data.token);
-      navigate("/analytics"); // redirect after login
+      navigate("/analytics"); 
     } catch (err) {
       setError("Invalid credentials");
     }

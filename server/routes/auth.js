@@ -6,7 +6,7 @@ const User = require("../models/user");
 
 const JWT_SECRET = process.env.JWT_SECRET || "your_default_secret";
 
-// Register
+
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
   const existing = await User.findOne({ email });
@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
   res.json({ message: "Registered successfully" });
 });
 
-// Login
+
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });

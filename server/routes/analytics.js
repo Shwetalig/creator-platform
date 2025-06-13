@@ -6,7 +6,7 @@ const multer = require("multer");
 
 const upload = multer({ dest: "uploads/" });
 
-// 📤 Upload new analytics JSON
+
 router.post("/upload", upload.single("analytics"), (req, res) => {
   const file = req.file;
   if (!file) return res.status(400).json({ error: "No file uploaded" });
@@ -24,7 +24,7 @@ router.post("/upload", upload.single("analytics"), (req, res) => {
   });
 });
 
-// 📊 Fetch analytics data
+
 router.get("/", (req, res) => {
   const filePath = path.join(__dirname, "../data/analytics.json");
 
