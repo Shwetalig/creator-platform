@@ -1,0 +1,11 @@
+{
+  "followers": [1450, 1480, 1500, 1525, 1550, 1570, 1600],
+  "engagement": [
+    { "post": 1, "likes": 210, "comments": 15 },
+    { "post": 2, "likes": 390, "comments": 35 },
+    { "post": 3, "likes": 310, "comments": 20 },
+    { "post": 4, "likes": 460, "comments": 55 },
+    { "post": 5, "likes": 425, "comments": 45 }
+  ],
+  "bestPostTime": "Friday 6 PM"
+}
