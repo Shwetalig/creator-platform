@@ -8,15 +8,15 @@ function IdeaAssistant() {
   const [error, setError] = useState("");
   const [result, setResult] = useState(null);
   const [savedIdeas, setSavedIdeas] = useState([]);
-  const BASE = process.env.REACT_APP_API_BASE_URL;
+  const BASE = process.env.REACT_APP_API_BASE_URL || "";
+
 
   useEffect(() => {
     axios
-      .get(`${BASE}/api/analytics`)
-      .get("${BASE}/api/idea/saved")
+      .get(`${BASE}/api/idea/saved`)
       .then((res) => setSavedIdeas(res.data))
       .catch((err) => console.error("Failed to fetch saved ideas", err));
-  }, []);
+  }, [BASE]);
 
   const handleDelete = async (id) => {
     try {
@@ -34,7 +34,7 @@ function IdeaAssistant() {
     setResult(null);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/idea", {
+      const res = await axios.post(`${BASE}/api/idea`, {
         topic,
         niche,
       });

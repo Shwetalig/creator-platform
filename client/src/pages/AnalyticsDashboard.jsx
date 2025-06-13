@@ -19,7 +19,7 @@ import html2canvas from "html2canvas";
 function AnalyticsDashboard() {
   const [data, setData] = useState(null);
   const analyticsSectionRef = useRef(null);
-  const BASE = process.env.REACT_APP_API_BASE_URL;
+  const BASE = process.env.REACT_APP_API_BASE_URL || "";
 
   useEffect(() => {
     axios
@@ -61,7 +61,7 @@ function AnalyticsDashboard() {
     formData.append("analytics", file);
 
     try {
-      await axios.post("/api/analytics/upload", formData, {
+      await axios.post(`${BASE}/api/analytics/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("Analytics data uploaded! Reloading...");
