@@ -1,4 +1,4 @@
-# Creator Platform (MERN Stack Assignment)
+# Creator Platform (MERN Stack )
 
 A full-stack Creator Platform with two core modules:
 
