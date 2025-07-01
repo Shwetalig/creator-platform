@@ -64,7 +64,7 @@ Create `.env` in `/server`:
 
 ```env
 OPENAI_API_KEY=your_key
-MONGODB_URI=mongodb://localhost:27017/creator-platform
+MONGODB_URI=mongodb_uri
 JWT_SECRET=your_jwt_secret
 ```
 
